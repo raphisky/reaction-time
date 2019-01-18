@@ -1,0 +1,13 @@
+body {
+  font-family: Helvetica, Arial;
+  text-align: center;
+  margin: auto;
+}
+
+#reactionZone {
+  display: inline-block;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background: pink;
+}
