@@ -3,17 +3,26 @@ var reactionTimeResult;
 var startingClickTimeStamp;
 var finalClickTimeStamp;
 var gameIsOn = false;
+var gameIsStarted = false;
 var scoreSeries = [];
+var seriesPlayed;
 
 $('#actionButton').click( function( event ){
 
-  if (!gameIsOn) {
-    startingClickTimeStamp = event.timeStamp;
-    console.log("starting click = " + startingClickTimeStamp);
-    testReactionTime(startingClickTimeStamp);
+  if (!gameIsStarted) {
+    seriesPlayed = 0;
+    gameIsStarted = true;
+    $('#actionButton').text("READY");
+
   }
 
-
+    else {
+      startingClickTimeStamp = event.timeStamp;
+          if (!gameIsOn) {
+              console.log("starting click = " + startingClickTimeStamp);
+              testReactionTime(startingClickTimeStamp);
+          }
+    }
 });
 
 $('#reactionZone').click( function( event ){
@@ -30,8 +39,9 @@ $('#reactionZone').click( function( event ){
 });
 
 function processScore(result) {
-  $('#lastScoreDisplay').append("<span>" + result.toFixed() + "ms" + " <br> </span>");
-  scoreSeries.push(reactionTimeResult);
+  $('#lastScoreDisplay').append("<span>" + result.toFixed() + "ms&nbsp;" + "</span>");
+  scoreSeries.push(result);
+  seriesPlayed += 1;
 }
 
 
@@ -49,3 +59,14 @@ function testReactionTime(u) {
     console.log("random delay = " + randomDelay);
     triggerReaction = setTimeout(spawnReactionSignal, randomDelay);
 };
+
+function nowBlinkMotherFucker(whichDot) {
+    $('.dot').addClass("lit");
+    setTimeout(nowUnBlinkMotherFucker, 300);
+}
+
+function nowUnBlinkMotherFucker() {
+  $('.dot').removeClass("lit");
+}
+
+setInterval(nowBlinkMotherFucker, 500);

@@ -36,24 +36,36 @@ h1 {
 }
 
 #seriesCounterContainer {
-  padding: 2px;
   display: block;
-  float: right;
 
 }
 
 #lastScoreDisplay {
-  padding-top: 15px;
+  padding-top: 30px;
   height: 40px;
 }
 
+.seriesCounterLabel {
+  display: inline-block;
+  float: left;
+}
+
 .dot {
-  height: 5px;
-  width: 5px;
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 4px;
+  width: 4px;
   border-radius: 50%;
-  background:#9bbc0f; 
-  border: 3px inset #9bbc0f;
-  padding-bottom: 5px;
+  background-color: #306230;
+  border: 7px inset #306230;
+  display: inline-block;
+  float: right;
+}
+
+.lit {
+  background-color:#9bbc0f;
+  border: 7px inset #9bbc0f;
+
 }
 
 #actionButton {
@@ -115,6 +127,28 @@ h1 {
   background: #0f380f;
   border: 10px solid #8bac0f;
 }
+
+
+/* MEDIA QUERIES */
+
+
+/* iPhone X */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { /* STYLES GO HERE */}
+
+/* other iPhones */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) { /* STYLES GO HERE */}
+
+/* large iPhones */
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px) { /* STYLES GO HERE */}
+
 
 /*
 BLINKING BUTTONS !!!
