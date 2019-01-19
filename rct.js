@@ -13,6 +13,7 @@ $('#actionButton').click( function( event ){
     seriesPlayed = 0;
     gameIsStarted = true;
     $('#actionButton').text("READY");
+    $('#instructionsContent').text("Appuie sur Ready quand tu es prêt(e).");
 
   }
 
@@ -33,7 +34,8 @@ $('#reactionZone').click( function( event ){
     reactionTimeResult = finalClickTimeStamp - startingClickTimeStamp - randomDelay;
     console.log("reaction time = " + reactionTimeResult);
     processScore(reactionTimeResult);
-    $('#reactionZone').css('background-color','#0f380f');
+    $('#reactionZone').css('background','#0f380f');
+    $('#instructionsContent').text("Appuie sur Ready quand tu es prêt(e).");
     gameIsOn = false;
   }
 });
@@ -46,7 +48,7 @@ function processScore(result) {
 
 
 function spawnReactionSignal() {
-  $('#reactionZone').css('background-color','blue');
+  $('#reactionZone').css('background','blue');
 }
 
 var triggerReaction;
@@ -55,6 +57,7 @@ var randomDelay;
 function testReactionTime(u) {
     gameIsOn = true;
     reactionTimeResult = 0;
+    $('#instructionsContent').text("Clique quand la couleur change !");
     randomDelay = Math.floor((Math.random() * 4000) + 2000);
     console.log("random delay = " + randomDelay);
     triggerReaction = setTimeout(spawnReactionSignal, randomDelay);

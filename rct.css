@@ -27,7 +27,7 @@ h1 {
 
 #seriesScoreBoard {
   float: left;
-  border: 10px solid #9bbc0f;
+  border: 10px solid #8bac0f;
   border-bottom: 0px;
   width: 50%;
   padding: 5px;
@@ -79,11 +79,11 @@ h1 {
   font-size: 24px;
   background: #9bbc0f;
   cursor: pointer;
-  border: 10px outset #9bbc0f;
+  border: 10px outset #8bac0f;
 }
 
 #actionButton:active {
-  border: 10px inset #9bbc0f;
+  border: 10px inset #8bac0f;
 }
 
 .logo {
@@ -122,10 +122,16 @@ h1 {
 #reactionZone {
   display: inline-block;
   margin: auto;
-  width: 100%;
   height: 250px;
   background: #0f380f;
   border: 10px solid #8bac0f;
+  background: repeating-linear-gradient(
+  45deg,
+  #0f380f,
+  #0f380f 45px,
+  #306230 45px,
+  #306230 90px
+  );
 }
 
 
