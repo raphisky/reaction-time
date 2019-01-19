@@ -6,21 +6,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Orbitron:900|Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="rct.css">
   </head>
   <body>
-    <h1><i>TESTE TON TEMPS DE RÉACTION</i></h1>
 
-    <div id="instructions">
-      <p id="instructionsContent">Clique sur le bouton quand la fenêtre change de couleur.</p>
-    </div>
+    <div class="container">
 
-    <div id="actionButton">
-      Démarrer
-    </div>
+        <div class="logo">
+          <span id="rt_lettering">REACTION TIME</span> <br>
+          <span id="sml_lettering">SIMULATOR</span>
+        </div>
 
-    <div id="reactionZone">
-      
+        <h1><i>TESTE TON TEMPS <br> DE REACTION !</i></h1>
+
+        <div id="seriesScoreBoard">
+          Série :
+
+          <div id="seriesCounterContainer">
+            <span class="dot empty"></span>
+
+          </div>
+        </div>
+
+
+        <div id="actionButton">
+          READY
+        </div>
+
+
+        <div id="reactionZone">
+              <div id="instructions">
+                <p id="instructionsContent">Clique (ou tape) quand la couleur change.</p>
+              </div>
+        </div>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

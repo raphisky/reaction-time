@@ -3,12 +3,13 @@ var reactionTimeResult;
 var startingClickTimeStamp;
 var finalClickTimeStamp;
 var gameIsOn = false;
+var scoreSeries = [];
 
 $('#actionButton').click( function( event ){
 
   gameIsOn = true;
   startingClickTimeStamp = event.timeStamp;
-  console.log("starting click = " +startingClickTimeStamp);
+  console.log("starting click = " + startingClickTimeStamp);
   testReactionTime(startingClickTimeStamp);
 
 });
@@ -31,7 +32,9 @@ function testReactionTime(u) {
             console.log("second click : " + finalClickTimeStamp);
             reactionTimeResult = finalClickTimeStamp - startingClickTimeStamp - randomDelay;
             console.log("reaction time = " + reactionTimeResult);
-            gameIsOn = false;  $('#reactionZone').css('background-color','pink');
+            gameIsOn = false;
+            $('#reactionZone').css('background-color','pink');
+            scoreSeries.push(reactionTimeResult);
             return reactionTimeResult;
           }
     });

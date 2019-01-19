@@ -1,13 +1,122 @@
 body {
+  background-color: #0F380F;
   font-family: Helvetica, Arial;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
   margin: auto;
+  color: #8bac0f;
+}
+
+.container {
+  width: 100vw;
+  max-width: 500px;
+  margin: auto;
+  border: 1px dotted white;
+}
+
+#instructions {
+  display: inline-block;
+  padding: 20px;
+}
+
+#seriesScoreBoard {
+  float: left;
+  border: 10px solid #9bbc0f;
+  border-bottom: 0px;
+  width: 50%;
+  padding: 5px;
+  padding-bottom: 0px;
+  text-align: left;
+}
+
+#seriesCounterContainer {
+  padding: 2px;
+}
+.dot {
+  display: block;
+  height: 12px;
+  width: 3px;
+  border-radius: 2px;
+  border: 3px inset #9bbc0f;
+  padding-bottom: 5px;
+}
+
+#actionButton {
+  display: block;
+  float: right;
+  margin: auto;
+  line-height: 60px;
+  width: 180px;
+  height: 50px;
+  color: #0f380f;
+  font-size: 24px;
+  background: #9bbc0f;
+  cursor: pointer;
+  border: 10px outset #9bbc0f;
+}
+
+#actionButton:active {
+  border: 10px inset #9bbc0f;
+}
+
+.logo {
+  display: inline-block;
+  margin: auto;
+  font-size: 48px;
+  padding: 5px;
+  padding-top: 10px;
+  border: 10px outset #8bac0f;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 15px;
+
+  perspective: 400px;
+  animation-name: starwars;
+  animation-duration: 3s;
+  animation-direction: reverse;
+  }
+
+#sml_lettering {
+  display: inline-block;
+  margin-top: -5px;
+  font-size: 69px;
+  transform: rotateX(6deg);
+}
+
+#rt_lettering {
+  display: inline-block;
+  transform: rotateX(6deg);
+}
+
+@keyframes starwars {
+  from {perspective: 400px;}
+  to {perspective: 1px;}
 }
 
 #reactionZone {
   display: inline-block;
   margin: auto;
-  width: 400px;
-  height: 400px;
-  background: pink;
+  width: 100%;
+  height: 250px;
+  background: #0f380f;
+  border: 10px solid #8bac0f;
 }
+
+/*
+BLINKING BUTTONS !!!
+Darkest Green
+Hex: #0f380f
+RGB: 15, 56, 15
+Dark Green
+Hex: #306230
+RGB: 48, 98, 48
+Light Green
+Hex: #8bac0f
+RGB: 139, 172, 15
+Lightest Green
+Hex: #9bbc0f
+RGB: 155, 188, 15
+
+FOOOONTS
+font-family: 'Libre Barcode 128 Text', cursive;
+
+*/
