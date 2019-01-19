@@ -18,8 +18,8 @@ $('#actionButton').click( function( event ){
   }
 
     else {
-      startingClickTimeStamp = event.timeStamp;
           if (!gameIsOn) {
+              startingClickTimeStamp = event.timeStamp;
               console.log("starting click = " + startingClickTimeStamp);
               testReactionTime(startingClickTimeStamp);
           }
