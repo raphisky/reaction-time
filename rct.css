@@ -7,6 +7,12 @@ body {
   color: #8bac0f;
 }
 
+h1 {
+  font-size: 24px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .container {
   width: 100vw;
   max-width: 500px;
@@ -31,12 +37,21 @@ body {
 
 #seriesCounterContainer {
   padding: 2px;
-}
-.dot {
   display: block;
-  height: 12px;
-  width: 3px;
-  border-radius: 2px;
+  float: right;
+
+}
+
+#lastScoreDisplay {
+  padding-top: 15px;
+  height: 40px;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background:#9bbc0f; 
   border: 3px inset #9bbc0f;
   padding-bottom: 5px;
 }

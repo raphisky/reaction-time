@@ -7,35 +7,45 @@ var scoreSeries = [];
 
 $('#actionButton').click( function( event ){
 
-  gameIsOn = true;
-  startingClickTimeStamp = event.timeStamp;
-  console.log("starting click = " + startingClickTimeStamp);
-  testReactionTime(startingClickTimeStamp);
+  if (!gameIsOn) {
+    startingClickTimeStamp = event.timeStamp;
+    console.log("starting click = " + startingClickTimeStamp);
+    testReactionTime(startingClickTimeStamp);
+  }
+
 
 });
+
+$('#reactionZone').click( function( event ){
+
+  if (gameIsOn) {
+    finalClickTimeStamp = event.timeStamp;
+    console.log("second click : " + finalClickTimeStamp);
+    reactionTimeResult = finalClickTimeStamp - startingClickTimeStamp - randomDelay;
+    console.log("reaction time = " + reactionTimeResult);
+    processScore(reactionTimeResult);
+    $('#reactionZone').css('background-color','#0f380f');
+    gameIsOn = false;
+  }
+});
+
+function processScore(result) {
+  $('#lastScoreDisplay').append("<span>" + result.toFixed() + "ms" + " <br> </span>");
+  scoreSeries.push(reactionTimeResult);
+}
+
 
 function spawnReactionSignal() {
   $('#reactionZone').css('background-color','blue');
 }
 
 var triggerReaction;
+var randomDelay;
 
 function testReactionTime(u) {
-    var randomDelay = Math.floor((Math.random() * 4000) + 2000);
+    gameIsOn = true;
+    reactionTimeResult = 0;
+    randomDelay = Math.floor((Math.random() * 4000) + 2000);
     console.log("random delay = " + randomDelay);
     triggerReaction = setTimeout(spawnReactionSignal, randomDelay);
-
-    $('#reactionZone').click( function( event ){
-
-          if (gameIsOn) {
-            finalClickTimeStamp = event.timeStamp;
-            console.log("second click : " + finalClickTimeStamp);
-            reactionTimeResult = finalClickTimeStamp - startingClickTimeStamp - randomDelay;
-            console.log("reaction time = " + reactionTimeResult);
-            gameIsOn = false;
-            $('#reactionZone').css('background-color','pink');
-            scoreSeries.push(reactionTimeResult);
-            return reactionTimeResult;
-          }
-    });
 };
