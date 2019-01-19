@@ -7,7 +7,10 @@ var gameIsStarted = false;
 var scoreSeries = [];
 var seriesPlayed;
 
-$('#actionButton').click( function( event ){
+//fitty('#sml_lettering');
+//fitty('#rt_lettering');
+
+$('#actionButton').mousedown( function( event ){
 
   if (!gameIsStarted) {
     seriesPlayed = 0;
@@ -26,7 +29,7 @@ $('#actionButton').click( function( event ){
     }
 });
 
-$('#reactionZone').click( function( event ){
+$('#reactionZone').mousedown( function( event ){
 
   if (gameIsOn) {
     finalClickTimeStamp = event.timeStamp;
@@ -44,6 +47,7 @@ function processScore(result) {
   $('#lastScoreDisplay').append("<span>" + result.toFixed() + "ms&nbsp;" + "</span>");
   scoreSeries.push(result);
   seriesPlayed += 1;
+  console.log(seriesPlayed);
 }
 
 
