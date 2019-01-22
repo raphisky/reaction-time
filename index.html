@@ -20,14 +20,22 @@
 
         <h1><i>TESTE TON TEMPS DE REACTION !</i></h1>
 
+        <h2><span id="pressStart">Tu as 3 essais.</span></h2>
+
+        <div id="instructions">
+          <p id="instructionsContent">Clique (ou tape) quand la couleur change.
+          </p>
+
+          <p id="roundInfoContent"></p>
+        </div>
+
+
         <div id="seriesScoreBoard">
 
           <div id="seriesCounterContainer">
-            <span class="seriesCounterLabel">Série :</span>
-            <span class="dot" id="dot1"></span>
-            <span class="dot" id="dot2"></span>
-            <span class="dot" id="dot3"></span>
-
+            <div class="dot" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
+            <div class="dot" id="dot3"></div>
           </div>
 
           <div id="lastScoreDisplay">
@@ -36,24 +44,21 @@
         </div>
 
 
-        <div id="actionButton">
-          START
+        <div id="reactionZone">
+              <div id="actionButton">
+                TEST ME
+              </div>
+
         </div>
 
+        <div id="rankingsContainer">
 
-        <div id="reactionZone">
-              <div id="instructions">
-                <p id="instructionsContent">Clique (ou tape) quand la couleur change.<br>
-                  Au bout de 3 essais, ta moyenne sera calculée.<br>
-
-                </p>
-              </div>
         </div>
 
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="fitty.min.js"></script>
-    <script type="text/javascript" src="rct.js"></script>
+    <script type="text/javascript" src="jquery.blink.js"></script>
+    <script type="text/javascript" src="rct-new.js"></script>
   </body>
 </html>

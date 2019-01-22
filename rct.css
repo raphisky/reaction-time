@@ -1,4 +1,6 @@
 body {
+  animation: lines 3s ease-out infinite;
+  background: repeating-linear-gradient(0deg, #111 0px, #111 1px, transparent 2px, transparent 5px);
   background-color: #0F380F;
   font-family: Helvetica, Arial;
   font-family: 'Press Start 2P', cursive;
@@ -9,46 +11,50 @@ body {
 
 h1 {
   font-size: 24px;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 
+#pressStart {
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
 .container {
-  width: 100vw;
+  animation: lines 3s ease-out infinite;
+  background: repeating-linear-gradient(0deg, #111 0px, #111 1px, transparent 2px, transparent 5px);
+  width: 100%;
   max-width: 600px;
-  border: 1px dotted white;
+  border: 10px outset #8bac0f;
   margin: auto;
 }
 
 #instructions {
   display: inline-block;
   padding: 20px;
+  height: 50px;
 }
 
 #seriesScoreBoard {
   float: left;
-  border: 10px solid #8bac0f;
-  border-radius: 2px;
-  border-bottom: 0px;
-  width: 50%;
+  width: 100%;
   padding: 5px;
   padding-bottom: 0px;
-  text-align: left;
 }
 
 #seriesCounterContainer {
   display: block;
+  margin-bottom: 15px;
 
 }
 
 #lastScoreDisplay {
-  padding-top: 30px;
-  height: 40px;
+  height: auto;
 }
 
 .seriesCounterLabel {
   display: inline-block;
-  float: left;
 }
 
 .dot {
@@ -60,26 +66,24 @@ h1 {
   background-color: #306230;
   border: 7px inset #306230;
   display: inline-block;
-  float: right;
+  margin: auto;
 }
 
 .lit {
   background-color:#9bbc0f;
   border: 7px inset #9bbc0f;
-
 }
 
 #actionButton {
   display: block;
-  float: right;
   margin: auto;
-  line-height: 45px;
-  width: 150px;
-  max-width: 40%;
-  height: 40px;
+  line-height: 200px;
+  width: 80%;
+  max-width: 600px;
+  height: 200px;
   border-radius: 2px;
   color: #0f380f;
-  font-size: 24px;
+  font-size: 36px;
   background: #9bbc0f;
   cursor: pointer;
   border: 10px outset #8bac0f;
@@ -95,7 +99,8 @@ h1 {
   font-size: 48px;
   padding: 5px;
   padding-top: 10px;
-  border: 10px outset #8bac0f;
+  border: 12px outset #8bac0f;
+  border-radius: 4px;
   font-family: 'Orbitron', sans-serif;
   margin-top: 15px;
 
@@ -122,20 +127,47 @@ h1 {
   to {perspective: 1px;}
 }
 
+@keyframes blinking-button {
+  0% {background-color: #0f380f; color: #8bac0f; }
+  50% {background-color: #8bac0f; color: #0f380f;}
+  100% {background-color: #0f380f; color: #8bac0f; }
+}
+
+@@keyframes blinking-dots {
+  0% {background-color: #306230; border-width: 7px; border-style: inset; border-color: #306230; }
+  50% {background-color: #9bbc0f; border-width: 7px; border-style: inset; border-color: #9bbc0f; }
+  100% {background-color: #306230; border-width: 7px; border-style: inset; border-color: #306230; }
+}
+
+@keyframes lines {
+   0% {
+      background-position:0px 0px;
+   }
+   100% {
+      background-position:0px 25px;
+   }
+}
+
+.blinking-button {
+  animation-name: blinking-button;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+.blinking-dots {
+  animation-name: blinking-dots;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
 #reactionZone {
+  width: 100%;
   display: inline-block;
   margin: auto;
   height: 250px;
   background: #0f380f;
-  border: 10px solid #8bac0f;
   border-radius: 2px;
-  background: repeating-linear-gradient(
-  45deg,
-  #0f380f,
-  #0f380f 45px,
-  #306230 45px,
-  #306230 90px
-  );
+  background: transparent;
 }
 
 
